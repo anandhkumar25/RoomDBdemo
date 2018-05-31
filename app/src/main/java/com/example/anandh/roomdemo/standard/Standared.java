@@ -10,6 +10,7 @@ public class Standared {
 
     @PrimaryKey
     private int standardId;
+    
     @ColumnInfo (name = "class_name")
     private int standaredName;
 }
