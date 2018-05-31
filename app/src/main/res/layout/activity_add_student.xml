@@ -27,17 +27,18 @@
         android:hint="class"/>
 
     <Button
-        android:id="@+id/save"
+        android:id="@+id/saveStudentData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="save"/>
-
-    <TextView
-        android:id="@+id/listOfStudent"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnUpdateStudent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="list of student"/>
+        android:layout_gravity="center"
+        android:text="Update"/>
+
 
 
     <EditText
@@ -52,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Delete"/>
+
 
 
 

@@ -6,42 +6,61 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity (foreignKeys = @ForeignKey(entity = Standared.class,
-        parentColumns = "standardId",
-        childColumns = "standard_class_id"))
+import com.example.anandh.roomdemo.division.Division;
+import com.example.anandh.roomdemo.standard.Standared;
+
+@Entity(foreignKeys = {@ForeignKey(entity = Standared.class,
+		parentColumns = "studentId",
+		childColumns = "standard_class_id"),
+
+		@ForeignKey(entity = Division.class,
+				parentColumns = "studentId",
+				childColumns = "division_id")})
+
 public class Students {
 
-    @PrimaryKey
-    private int studentId;
+	@PrimaryKey
+	private int studentId;
 
-    @ColumnInfo (name = "student_name")
-    private String studentName;
+	@ColumnInfo(name = "student_name")
+	private String studentName;
 
-    public int getStudentId() {
-        return studentId;
-    }
+	@ColumnInfo(name = "standard_class_id")//this ID points to standard
+	private String studentClass;
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
-    }
+	@ColumnInfo(name = "division_id")//this ID points to division
+	private String divisionId;
 
-    public String getStudentName() {
-        return studentName;
-    }
+	public String getDivisionId() {
+		return divisionId;
+	}
 
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
-    }
+	public void setDivisionId(String divisionId) {
+		this.divisionId = divisionId;
+	}
 
-    public int getStudentClass() {
-        return studentClass;
-    }
+	public int getStudentId() {
+		return studentId;
+	}
 
-    public void setStudentClass(int studentClass) {
-        this.studentClass = studentClass;
-    }
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
 
-    @ColumnInfo (name = "standard_class_id")
+	public String getStudentName() {
+		return studentName;
+	}
 
-    private int studentClass;
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public String getStudentClass() {
+		return studentClass;
+	}
+
+	public void setStudentClass(String studentClass) {
+		this.studentClass = studentClass;
+	}
+
 }
